@@ -12,6 +12,8 @@ git clone https://github.com/teppei-github/laravel-template.git
 cd laravel-template
 ```
 
+laravel のプロジェクト名に、フォルダ名を変換する
+
 # ② docker compose
 
 docker をインストールしていない場合は、使用中の PC に合わせてインストール
@@ -21,4 +23,4 @@ https://www.docker.com/get-started/
 
 `docker compose exec php bash`
 
-`laravel のインストールを composer で実行する`
+`composer create-project "laravel/laravel=9.*" .`
