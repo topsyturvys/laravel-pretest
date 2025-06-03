@@ -30,7 +30,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    platform: linux/amd64 # mac の場合は有効にすること
+    # platform: linux/amd64 # mac の場合は有効にすること
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOST=mysql
