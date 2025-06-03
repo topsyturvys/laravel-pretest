@@ -20,7 +20,7 @@ laravel のプロジェクト名に、フォルダ名を変換する
 `先ほど変更したフォルダ名がVSCodeのトップになっていることを必ず確認すること`  
 [![Image from Gyazo](https://i.gyazo.com/6de13ed9f6ab4f0fdc4d5a0b83c4f514.png)](https://gyazo.com/6de13ed9f6ab4f0fdc4d5a0b83c4f514)
 
-docker をインストールしていない場合は、使用中の PC に合わせてインストール
+docker をインストールしていない場合は、使用中の PC に合わせてインストール  
 https://www.docker.com/get-started/
 
 `docker compose up -d --build`
