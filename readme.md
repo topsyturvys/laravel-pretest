@@ -34,3 +34,19 @@ https://www.docker.com/get-started/
 #### laravel バージョン 10 の場合
 
 `composer create-project "laravel/laravel=10.*" .`
+
+# ③ laravel の環境を修正
+
+#### `config/app.php` の timezone を修正
+
+```
+'timezone' => 'UTC',
+↓
+'timezone' => 'Asia/Tokyo',
+```
+
+#### `.env` の修正
+
+DB_DATABASE, DB_USERNAME, DB_PASSWORD の値を変更
+
+[![Image from Gyazo](https://i.gyazo.com/7f913d728106a76ffc05c95d596a4e66.png)](https://gyazo.com/7f913d728106a76ffc05c95d596a4e66)
