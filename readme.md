@@ -23,4 +23,10 @@ https://www.docker.com/get-started/
 
 `docker compose exec php bash`
 
+#### laravel バージョン 9 の場合
+
 `composer create-project "laravel/laravel=9.*" .`
+
+#### laravel バージョン 10 の場合
+
+`composer create-project "laravel/laravel=10.*" .`
