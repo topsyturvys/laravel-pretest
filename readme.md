@@ -47,6 +47,16 @@ https://www.docker.com/get-started/
 
 #### `.env` の修正
 
-DB_DATABASE, DB_USERNAME, DB_PASSWORD の値を変更
+DB_HOST, DB_DATABASE, DB_USERNAME, DB_PASSWORD の値を変更
 
-[![Image from Gyazo](https://i.gyazo.com/7f913d728106a76ffc05c95d596a4e66.png)](https://gyazo.com/7f913d728106a76ffc05c95d596a4e66)
+[![Image from Gyazo](https://i.gyazo.com/2a9477db28b24ca194ac6e3d69aafd58.png)](https://gyazo.com/2a9477db28b24ca194ac6e3d69aafd58)
+
+#### npm の実行
+
+package の変更があった場合、_src_ フォルダで `npm install` を実行する
+
+```
+cd src
+npm install
+npm run build
+```
