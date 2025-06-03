@@ -13,8 +13,11 @@ cd laravel-template
 ```
 
 laravel のプロジェクト名に、フォルダ名を変換する
+（例 laravel-template → laravel-basic 等）
 
 # ② docker compose
+
+`必ず、先ほど変更したフォルダ名がVSCodeのトップになっていることを確認すること`
 
 docker をインストールしていない場合は、使用中の PC に合わせてインストール
 https://www.docker.com/get-started/
