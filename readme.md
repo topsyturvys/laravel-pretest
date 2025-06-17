@@ -60,3 +60,87 @@ cd src
 npm install
 npm run build
 ```
+
+# ④ laravel のテスト環境を作成
+
+#### テスト用のデータベースを作成  
+
+[![Image from Gyazo](https://i.gyazo.com/b10def21c9dfe7c0af503ac3671e9988.png)](https://gyazo.com/b10def21c9dfe7c0af503ac3671e9988)
+
+#### src/config/database.php を開き、編集
+
+現状の "mysql" のブロックをコピーし、以下を変更
+
+[![Image from Gyazo](https://i.gyazo.com/9f4b9611bf6fc41a982d7f25c71ac513.png)](https://gyazo.com/9f4b9611bf6fc41a982d7f25c71ac513)
+
+#### .env.testing を作成
+
+.envファイルをコピー  
+
+```
+cp .env .env.testing
+```
+
+ファイルの作成ができたたら、.env.testingファイルの文頭部分にあるAPP_ENVとAPP_KEYを編集。
+
+```
+APP_NAME=Laravel
+- APP_ENV=local
+- APP_KEY=base64:vPtYQu63T1fmcyeBgEPd0fJ+jvmnzjYMaUf7d5iuB+c=
++ APP_ENV=test
++ APP_KEY=
+APP_DEBUG=true
+APP_URL=http://localhost
+```
+
+次に、.env.testingにデータベースの接続情報を加える。
+
+```
+  DB_CONNECTION=mysql
+  DB_HOST=mysql
+  DB_PORT=3306
+- DB_DATABASE=laravel_db
+- DB_USERNAME=laravel_user
+- DB_PASSWORD=laravel_pass
++ DB_DATABASE=laravel_db_test
++ DB_USERNAME=root
++ DB_PASSWORD=root
+```
+
+先ほど「空」にしたAPP_KEYに新たなテスト用のアプリケーションキーを加えるために以下のコマンドを実行
+
+```
+php artisan key:generate --env=testing
+```
+
+また、キャッシュの削除をしないと反映されなかったりするので、下記コマンドもコマンドラインで実行
+
+```
+php artisan config:clear
+```
+
+マイグレーションコマンドを実行して、テスト用のテーブルを作成
+
+```
+php artisan migrate --env=testing
+```
+
+#### phpunitの編集
+
+プロジェクトの直下のphpunit.xmlを開き、DB_CONNECTIONとDB_DATABASEを以下のように変更
+
+```
+    <php>
+        <server name="APP_ENV" value="testing"/>
+        <server name="BCRYPT_ROUNDS" value="4"/>
+        <server name="CACHE_DRIVER" value="array"/>
+-         <!-- <server name="DB_CONNECTION" value="sqlite"/> -->
+-         <!-- <server name="DB_DATABASE" value=":memory:"/> -->
++         <server name="DB_CONNECTION" value="mysql_test"/>
++         <server name="DB_DATABASE" value="laravel_db_test"/>
+        <server name="MAIL_MAILER" value="array"/>
+        <server name="QUEUE_CONNECTION" value="sync"/>
+        <server name="SESSION_DRIVER" value="array"/>
+        <server name="TELESCOPE_ENABLED" value="false"/>
+    </php>
+```
