@@ -1,0 +1,65 @@
+.header__inner {
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-right:15px;
+    padding-left:15px;
+    max-width: 670px;
+}
+
+.header-utilities {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    text-decoration: none;
+    font-size: 24px;
+    color:gray;
+}
+
+.header__button {
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-right:30px;
+    padding-left:30px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.register__content {
+    padding-right:15px;
+    padding-left:15px;
+    max-width: 670px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.register-keyword {
+    margin-bottom:20px;
+}
+
+.register-keyword__input {
+    padding:5px;
+    width:400px;
+}
+
+.register-description {
+    margin-bottom:20px;
+}
+
+.register-description__input {
+    padding:5px;
+    width:400px;
+    height:100px;
+}
+
+.register-form__button-submit {
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-right:30px;
+    padding-left:30px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}

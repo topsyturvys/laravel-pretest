@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PretestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[PretestController::class,'index']);
+Route::post('/', [PretestController::class, 'index']);
+Route::post('/register',[PretestController::class,'register']);
+Route::post('/pretests', [PretestController::class, 'store']);
