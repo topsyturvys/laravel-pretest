@@ -18,3 +18,6 @@ Route::get('/',[PretestController::class,'index']);
 Route::post('/', [PretestController::class, 'index']);
 Route::post('/register',[PretestController::class,'register']);
 Route::post('/pretests', [PretestController::class, 'store']);
+Route::patch('/pretests/update',[PretestController::class,'update']);
+Route::delete('/pretests/delete',[PretestController::class,'destroy']);
+Route::get('/pretests/search',[PretestController::class,'search']);

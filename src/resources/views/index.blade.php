@@ -35,12 +35,13 @@
         <!-- メイン画面エリア -->
         <div class="search__content">
             <!-- 送信用フォーム -->
-            <form action="" class="search-form">
+            <form action="/pretests/search" class="search-form" method="GET">
                 @csrf
                 <!-- 検索画面エリア -->
                 <div class="search-form__item">
                     <!-- 検索テキスト欄 -->
-                    <input class="search-from__item-input" type="text">
+                    <input class="search-from__item-input" type="text" name="keyword"
+                        placeholder="検索キーワード" value="{{ old('keyword') }}">
                 </div>
                 <!-- 検索ボタンエリア -->
                 <div class="search-form__button">
@@ -68,19 +69,23 @@
                     <tr class="search-table__row">
                         <!-- 登録日／キーワード／説明／修正ボタン -->
                         <td class="search-table__item">
-                            <form action="/" class="update-form">
+                            <form action="/pretests/update" class="update-form" method="POST">
+                                @method('PATCH')
                                 @csrf
                                 <div class="update-form__item">
-                                    <input type="text" class="update-form__item-input"
-                                        value="{{ $pretest->updated_at->format('Y/n/j') }}">
+                                    <div class="update-form__item-input">
+                                        {{ $pretest->updated_at->format('Y/n/j') }}
+                                    </div>
                                 </div>
                                 <div class="update-form__item">
                                     <input type="text" class="update-form__item-input"
-                                        value="{{ $pretest['keyword'] }}">
+                                        name="keyword" value="{{ $pretest['keyword'] }}">
+                                    <input type="hidden" name="id" value="{{ $pretest['id'] }}">
                                 </div>
                                 <div class="update-form__item">
                                     <input type="text" class="update-form__item-input"
-                                        value="{{ $pretest['description'] }}">
+                                        name="description" value="{{ $pretest['description'] }}">
+                                    <input type="hidden" name="id" value="{{ $pretest['id'] }}">
                                 </div>
                                 <div class="update-form__button">
                                     <button class="update-form__button-submit">
@@ -90,9 +95,11 @@
                             </form>
                         </td>
                         <td class="search-table__item">
-                            <form action="" class="delete-form">
+                            <form action="/pretests/delete" class="delete-form" method="POST">
+                                @method('DELETE')
                                 @csrf
                                 <div class="delete-form__button">
+                                    <input type="hidden" name="id" value="{{ $pretest['id'] }}">
                                     <button class="delete-form__button-submit">
                                         削除
                                     </button>
