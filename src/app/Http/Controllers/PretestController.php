@@ -43,7 +43,7 @@ class PretestController extends Controller
 
     public function search(Request $request)
     {
-        $pretests = Pretest::with('keyword')->KeywordSearch($request->keyword)->get();
+        $pretests = Pretest::KeywordSearch($request->keyword)->get();
         return view('index', compact('pretests'));
     }
 }

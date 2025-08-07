@@ -10,10 +10,10 @@ class Pretest extends Model
     use HasFactory;
     protected $fillable = ['keyword', 'description'];
 
-    public function scopeKeywordSearch($query, $keyword)
+    public function scopeKeywordSearch($query, $key)
     {
-        if (!empty($keyword)) {
-            $query->where('keyword', 'like', '%' . $keyword . '%');
+        if (!empty($key)) {
+            $query->where('keyword', 'like', '%' . $key . '%');
         }
     }
 }

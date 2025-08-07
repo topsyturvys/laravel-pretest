@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ヘッダー用CSS -->
+    <link rel="stylesheet" href="{{('css/common.css')}}">
+    <!-- 登録画面用CSS -->
     <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+    <!-- リセット用CSS -->
+    <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
     <title>Document</title>
 </head>
 

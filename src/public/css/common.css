@@ -1,0 +1,43 @@
+/* ヘッダー画面エリア */
+.header__inner {
+    /* 上下左右の余白（内側） */
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-right:15px;
+    padding-left:15px;
+    /* 最大幅 */
+    max-width: 670px;
+}
+
+/* ヘッダー項目エリア */
+.header-utilities {
+    /* 各項目を横並び */
+    display: flex;
+    /* 縦の中央揃え */
+    align-items: center;
+    /* 均等割り付け */
+    justify-content: space-between;
+}
+
+/* ヘッダータイトル */
+.header__logo {
+    /* 装飾なし */
+    text-decoration: none;
+    /* フォントサイズ */
+    font-size: 24px;
+    /* 色 */
+    color:gray;
+}
+
+/* 登録画面ボタン */
+.header__button {
+    /* 上下左右の余白 */
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-right:30px;
+    padding-left:30px;
+    /* 枠線 */
+    border: 1px solid gray;
+    /* 縁取り */
+    border-radius: 5px;
+}

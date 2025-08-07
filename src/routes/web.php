@@ -16,8 +16,10 @@ use App\Http\Controllers\PretestController;
 
 Route::get('/',[PretestController::class,'index']);
 Route::post('/', [PretestController::class, 'index']);
+// 登録画面に移行するためのコントローラー（アクション名：register）
 Route::post('/register',[PretestController::class,'register']);
 Route::post('/pretests', [PretestController::class, 'store']);
 Route::patch('/pretests/update',[PretestController::class,'update']);
 Route::delete('/pretests/delete',[PretestController::class,'destroy']);
+// 検索を実行するためのコントローラー（アクション名：search）
 Route::get('/pretests/search',[PretestController::class,'search']);

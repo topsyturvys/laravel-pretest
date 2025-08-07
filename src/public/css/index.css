@@ -1,86 +1,87 @@
-.header__inner {
-    padding-top:20px;
-    padding-bottom:20px;
-    padding-right:15px;
-    padding-left:15px;
-    max-width: 670px;
-}
-
-.header-utilities {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.header__logo {
-    text-decoration: none;
-    font-size: 24px;
-    color:gray;
-}
-
-.header__button {
-    padding-top:5px;
-    padding-bottom:5px;
-    padding-right:30px;
-    padding-left:30px;
-    border: 1px solid gray;
-    border-radius: 5px;
-}
-
+/* メイン画面エリア */
 .search__content {
+    /* 左右下余白 */
     padding-bottom:20px;
     padding-right:15px;
     padding-left:15px;
+    /* 最大幅 */
     max-width: 670px;
 }
 
+/* 送信用フォームエリア */
 .search-form {
+    /* 横並び */
     display: flex;
+    /* 縦の中央揃え */
     align-items: center;
-    justify-content: flex-start;
+    /* 下余白（外側） */
     margin-bottom: 15px;
 }
 
+/* 検索画面エリア */
 .search-form__item {
+    /* 右余白 */
     margin-right:15px;
 }
 
+/* 検索テキスト欄 */
 .search-from__item-input {
+    /* 上下余白（内訳） */
     padding-top:6px;
     padding-bottom:6px;
+    /* 幅 */
     width:240px;
 }
 
+/* 検索ボタン */
 .search-form__button-submit {
+    /* 上下左右余白（内側） */
     padding-top:5px;
     padding-bottom:5px;
     padding-right:30px;
     padding-left:30px;
+    /* 枠線 */
     border: 1px solid gray;
+    /* 縁取り */
     border-radius: 5px;
 }
 
+/* データテーブルエリア */
 .search-table {
+    /* 最大幅 */
     max-width: 1230px;
 }
 
+/* 見出しエリア */
 .search-table__header {
+    /* 横並び */
     display: flex;
+    /* 項目間のスペース */
     gap: 65px;
 }
 
+/* 見出し項目 */
 .search-table__header-span {
+    /* 太さ */
     font-weight: 300;
 }
 
+/* 更新用フォームエリア */
 .update-form {
+    /* 横並び */
     display: flex;
 }
 
+/* 登録日（更新日） */
 .update-form__item-input {
+    /* 枠線なし */
     border: none;
+    /* 選択時の枠線なし */
     outline: none;
+    /* インラインブロック化 */
     display: inline-block;
+    /* フォントサイズ */
+    font-size: 12px;
 }
 
 .update-form__item:first-of-type {
